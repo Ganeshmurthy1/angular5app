@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="col">
+      <p>Add Bucket List</p>
+    </div>
+    <div class="col">
+      <p>your Bucket List : {{itemCount}}</p>
+    </div>
+  </div>
+  <div class="row" [@goals]="goals.length">
+    <div class="col">
+      <form >
+       <input type="text" placeho lder="goals" name="goal" [(ngModel)]="goalText"/>
+        <input type="submit" [value]=btnText (click)="AddItem()"/>
+      </form>
+      
+    </div>
+    <div *ngFor="let goal of goals; let i = index" (click)="removeItem(i)">
+      {{goal}}
+    </div>
+   
+  </div>
